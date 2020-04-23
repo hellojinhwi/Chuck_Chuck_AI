@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<!-- 자동완성 스타일시트 -->
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="assets/js/axios.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<!-- Title  -->
+<title>척척약사</title>
+
+<!-- Favicon  -->
+<link rel="icon" href="img/core-img/favicon.ico">
+
+<!-- Style CSS -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.filebox label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #fff;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #947054;
+  cursor: pointer;
+  border: 1px solid #947054;
+  border-radius: .25em;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.filebox label:hover {
+  background-color: #000000;
+}
+
+.filebox label:active {
+  background-color: #000000;
+}
+
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+</style>
+<body>
+
+
+  
+  
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="south-load"></div>
+	</div>
+
+	<!-- ##### Header Area Start ##### -->
+	<header class="header-area">
+
+		<!-- Main Header Area -->
+		<div class="main-header-area" id="stickyHeader">
+			<div class="classy-nav-container breakpoint-off">
+				<!-- Classy Menu -->
+				<nav class="classy-navbar justify-content-between" id="southNav">
+
+					<!-- Logo -->
+					<a class="nav-brand" href="http://192.168.22.71:8000/"><img
+						src="img/core-img/logo.png" align="middle"> 척척약사</a>
+
+
+					<!-- Navbar Toggler -->
+					<div class="classy-navbar-toggler">
+						<span class="navbarToggler"><span></span><span></span><span></span></span>
+					</div>
+
+					<!-- Menu -->
+					<div class="classy-menu">
+
+						<!-- close btn -->
+						<div class="classycloseIcon">
+							<div class="cross-wrap">
+								<span class="top"></span><span class="bottom"></span>
+							</div>
+						</div>
+
+						<!-- Nav Start -->
+						<div class="classynav">
+							<ul>
+								<li><a href="http://192.168.22.71:8000/">텍스트 검색</a></li>
+								<li><a href="http://192.168.22.71:5000/">이미지 검색</a></li>
+							</ul>
+						</div>
+						<!-- Nav End -->
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!-- ##### Header Area End ##### -->
+
+	
+	
+
+	<!-- ##### Featured Properties Area Start ##### -->
+	<section class="featured-properties-area section-padding-100-50" >
+		<div class="container pt-5">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading wow fadeInUp">
+						<h2>이미지 검색</h2>
+						<p>검색엔 다소 시간이 걸릴 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ##### Featured Properties Area End ##### -->
+		<!-- Start Sample Area -->
+
+	
+<div class="south-search-area">
+		<div class="container pb-5">
+			<div class="row">
+				<div class="col-12">
+					<div class="advanced-search-form">
+						<!-- Search Title -->
+						<div class="search-title">
+							<p>Search for your pill</p>
+						</div>
+						<!-- Search Form -->
+						            <form action="/upload" id="form" name="imageform" method="POST"
+                  enctype="multipart/form-data" onsubmit="return check()">
+				  <div align="center">
+					<div class="col-md-12">
+								<div class="row">
+								<div class="col-md-4"></div>
+									<div class="col-md-4">
+										<div width="800"><br>
+											<output id="list" width="500">
+												사진을 등록해주세요.
+											</output><br><br>
+										</div>
+									</div>
+								</div>
+								<div class="filebox" >
+									<div class="row">
+										<div class="col-md-4 "></div>
+										<div class="col-md-4">
+												<label for="uploadFile">Upload</label> <input type="file" accept=".jpg, .jpeg, .png" id="uploadFile" name="uploadFile" capture="camera">&nbsp;&nbsp;&nbsp;
+												<label for="start">Search</label><button type="submit" style="display: none;" id="start">
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+						
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ##### Call To Action Area End ##### -->
+
+	<!-- ##### Testimonials Area Start ##### -->
+
+	<!-- ##### Footer Area End ##### -->
+	<script type="text/javascript">
+		if (window.FileReader) {
+			//then your code goes here
+		} else {
+			alert('This browser does not support FileReader');
+		}
+
+		function check() {
+			var files = document.getElementById("uploadFile").value;
+			if (files == null || files.length == 0 || files == "") {
+				alert("사진을 등록해주세요.");
+				return false;
+			} else {
+				return true;
+			}
+		}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		document.getElementById('uploadFile').addEventListener('change',
+				handleFileSelect, false);
+
+		function handleFileSelect(evt) {
+			var files = evt.target.files;
+			var f = files[0];
+			var reader = new FileReader();
+
+			reader.onload = (function(theFile) {
+				return function(e) {
+					document.getElementById('list').innerHTML = [ '<img src="', e.target.result,'" title="', theFile.name, '" width="500" />' ]
+							.join('');
+				};
+			})(f);
+			reader.readAsDataURL(f);
+		}
+	</script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="assets/js/jquery.waypoints.min.js"></script>
+	<script src="assets/js/jquery.stellar.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets/js/aos.js"></script>
+	<script src="assets/js/jquery.animateNumber.min.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+	<script src="assets/js/scrollax.min.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	<!-- jQuery (Necessary for All JavaScript Plugins) -->
+	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	
+	<!-- Popper js -->
+	<script src="js/popper.min.js"></script>
+	
+	<!-- Bootstrap js -->
+	<script src="js/bootstrap.min.js"></script>
+	
+	<!-- Plugins js -->
+	<script src="js/plugins.js"></script>
+	<script src="js/classy-nav.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	
+	<!-- Active js -->
+	<script src="js/active.js"></script>
+
+
+
+</body>
+
+</html>
